@@ -41,7 +41,7 @@ app.layout = html.Div(
                                                 value='px'
                                             ),                                            
                                         ], #cierre de children
-                                    style={'color': '#1E1E1E'}) #Cierre del html.div div-for-dropdown
+                                    ) #Cierre del html.div div-for-dropdown
                             ]), #Cierre del html.div three columns y children
                             html.Div(className='nine columns div-for-charts bg-grey',  # Defino la columna derecha con color gris
                                 children = [
@@ -52,6 +52,8 @@ app.layout = html.Div(
                     ])#Cierre del htlm.div div row
                 ])#Cierre del html.div
 
+
+#Callback para actualizar la gráfica con el componente select
 @app.callback(Output('figura', 'figure'),
               [Input('select', 'value')])
 def update_output(select):
@@ -144,7 +146,6 @@ def update_output(select):
 
 
 
-
-# Run the app
+# Ejecuto la aplicación
 if __name__ == '__main__':
     app.run_server(debug=True)
