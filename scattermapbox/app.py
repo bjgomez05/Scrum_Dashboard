@@ -120,17 +120,22 @@ def update_output(select):
                         ))
                     
                     fig.update_layout(
-                    title='Ciudades de Colombia',
+                    title={'text': 'Ciudades de Colombia', 'x': 0.5},
                     autosize=True,
                     hovermode='closest',
                     showlegend=False,
                     plot_bgcolor  = 'rgba(0, 0, 0, 0)',
                     paper_bgcolor = 'rgba(0, 0, 0, 0)',
+                    height=600,
                     mapbox=dict(
                         accesstoken=token,
                         bearing=0,
+                        center=dict(
+                            lat=4.6126,
+                            lon=-74.0705
+                        ),
                         pitch=0,
-                        zoom=3,
+                        zoom=4,
                         style='light'
                     ),
                 )
