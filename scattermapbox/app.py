@@ -64,7 +64,7 @@ def update_output(select):
         fig.update_layout(
             plot_bgcolor  = 'rgba(0, 0, 0, 0)',
             paper_bgcolor = 'rgba(0, 0, 0, 0)',
-            title={'text': 'Plotly Express', 'x': 0.5})
+            title={'text': 'Ejemplo básico con Plotly Express', 'x': 0.5})
         
     else:
         if select == 'go':
@@ -80,7 +80,8 @@ def update_output(select):
                     'accesstoken': token,
                     'style': "light", 'zoom': 0.7},
                 plot_bgcolor  = 'rgba(0, 0, 0, 0)',
-                paper_bgcolor = 'rgba(0, 0, 0, 0)')
+                paper_bgcolor = 'rgba(0, 0, 0, 0)',
+                title={'text': 'Ejemplo básico con graph_objs (go) y marcadores', 'x': 0.5})
         
         else:
             if select =='gp':
@@ -96,7 +97,7 @@ def update_output(select):
                 fig.update_layout(
                 plot_bgcolor  = 'rgba(0, 0, 0, 0)',
                 paper_bgcolor = 'rgba(0, 0, 0, 0)',
-                title={'text': 'GeoPandas', 'x': 0.5})
+                title={'text': 'Ejemplo básico con GeoPandas', 'x': 0.5})
 
             else:
                 if select == 'co':
@@ -111,7 +112,7 @@ def update_output(select):
                             mode='markers',
                             marker=go.scattermapbox.Marker(
                                 size=17,
-                                color='rgb(255, 0, 0)',
+                                color='rgb(55, 73, 175)',
                                 opacity=0.7
                             ),
                             text=locations_name,
@@ -129,7 +130,7 @@ def update_output(select):
                         accesstoken=token,
                         bearing=0,
                         pitch=0,
-                        zoom=5,
+                        zoom=3,
                         style='light'
                     ),
                 )
