@@ -14,7 +14,8 @@ Queda pendiente ampliar la explicación cuando se logren enriqueser los mapas!!
 
 ### Vista previa del mapa de Densidad por Países 
 
-
+![picture](imagenes/densidad_paises.png)
 
 ### Vista previa del mapa de Densidad por Ciudades
 
+![picture](imagenes/densidad_ciudad.png)
