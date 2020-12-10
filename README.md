@@ -1,11 +1,11 @@
 # Scrum_Dashboard
-
 ## Density Heatmap
 
-En esta sección rama se mostrará un código que nos permite gráficar un mapa de calor, en representación de los terremotos que se han podido registrar desde 1968 hasta 2016, en base a coordenadas decimales (Siendo esta una de las principales unidades de medidas utilizadas por los GPS).
+En esta rama aprenderemos un poco sobre el despliegue del mapa de calor (density_heatmap) que nos provee el módulo plotly.express. 
+Encontraremos el despliegue de un ejemplo básico proporcionado por la [documentación de mapbox.](https://plotly.com/python/mapbox-density-heatmaps/)
 
-### Requirements
+Y en la carpeta 'Density_Heatmap' estarán los despliegues de la los mapas de calor para los datos proporcionados por la [Comunidad Scrum Latam](https://www.facebook.com/groups/1606992572809602)
 
+Te invito a seguir explorando el proyecto y sus diferentes ramas!!
 
-### Explicación
 

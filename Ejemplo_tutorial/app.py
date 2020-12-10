@@ -27,10 +27,9 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/earthquakes-23k.csv')
 
-# token = 'pk.eyJ1IjoiYmpnb21lejA1IiwiYSI6ImNraTZodXF6ajBtYWQyd3Fva2o0dnNiODgifQ.WdrcswJbYCl2KR1f9g7X_Q'
 
-df['Date'] = pd.to_datetime(
-    df['Date'],
+df['Date'] = pd.to_datetime(        # Utilizamos esta sección para extraer el año de la fecha registrada de cada temblor
+    df['Date'],                     # con el fin de utilizarlo para dar animación a mapa (con 'animetion_frame')
     errors = 'coerce',
     format = '%m/%d/%Y'
 )
@@ -39,31 +38,32 @@ df['Year'] = df['Date'].dt.year
 
 fig = px.density_mapbox(df, lat='Latitude', 
                         lon='Longitude',
-                        z='Magnitude',
-                        radius=10,
+                        z='Magnitude',          # Señalamos la columna a la que le vamos a dar mayor visualización (respecto a los datos)
+                        radius=10,              # Determinamos el tamaño general de los puntos 
                         center=dict(lat=0, lon=-80),
                         zoom=2,
-                        # animation_frame='Year',                        
+                        # animation_frame='Year',   # Argumento que le permite dar animación al mapa (variando el argumento deseado)           
                         mapbox_style="open-street-map",
                         # mapbox_style="dark",
                         # margin={"r":0,"t":0,"l":0,"b":0},
                         )
 
 
-# fig.update_layout(
+fig.update_layout(
 #     mapbox_style="dark", 
 #     mapbox_accesstoken=token,
-#     margin={"r":0,"t":0,"l":0,"b":0},
-#     #width='100%',
-#     height=600,
-#     )
+    margin={"r":0,"t":0,"l":0,"b":0},
+    # width='100%',
+    height=700,
+    )
 
 app.layout = html.Div([
-        html.H1("Earthquakers in this World", style={'text-align': 'center'}),
+        html.H1("Earthquakers in this World", style={'text-align': 'center'}),  # Se le agrega un titulo al DashBoard
 
-        dcc.Graph(figure=fig)
+        dcc.Graph(figure=fig)    # Llamamos la grafica que vamos a proyectar
 
 ])
 
 if __name__ == '__main__':
     app.run_server(debug=True)  
+
